@@ -1,0 +1,86 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Adebayo",
+      "lastName": "Johnson",
+      "email": "adebayo.johnson@school.edu.ng",
+      "phone": "+2341234567890",
+      "department": "Mathematics",
+      "position": "Teacher",
+      "salary": 45000,
+      "hireDate": "2020-01-15",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "firstName": "Chinwe",
+      "lastName": "Okoro",
+      "email": "chinwe.okoro@school.edu.ng",
+      "phone": "+2341234567891",
+      "department": "English",
+      "position": "Principal",
+      "salary": 65000,
+      "hireDate": "2018-03-20",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "firstName": "Emeka",
+      "lastName": "Nwosu",
+      "email": "emeka.nwosu@school.edu.ng",
+      "phone": "+2341234567892",
+      "department": "Science",
+      "position": "Vice Principal",
+      "salary": 55000,
+      "hireDate": "2019-05-10",
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "firstName": "Funmi",
+      "lastName": "Adeyemi",
+      "email": "funmi.adeyemi@school.edu.ng",
+      "phone": "+2341234567893",
+      "department": "History",
+      "position": "Counselor",
+      "salary": 40000,
+      "hireDate": "2021-07-05",
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "firstName": "Gbenga",
+      "lastName": "Okafor",
+      "email": "gbenga.okafor@school.edu.ng",
+      "phone": "+2341234567894",
+      "department": "Arts",
+      "position": "Librarian",
+      "salary": 35000,
+      "hireDate": "2022-09-12",
+      "status": "active"
+    }
+  ],
+  "leaveRequests": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "leaveType": "Annual Leave",
+      "startDate": "2023-12-01",
+      "endDate": "2023-12-05",
+      "reason": "Family vacation",
+      "status": "pending",
+      "appliedAt": "2023-11-20T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "employeeId": 2,
+      "leaveType": "Sick Leave",
+      "startDate": "2023-11-25",
+      "endDate": "2023-11-26",
+      "reason": "Medical appointment",
+      "status": "approved",
+      "appliedAt": "2023-11-22T14:30:00.000Z"
+    }
+  ]
+}
