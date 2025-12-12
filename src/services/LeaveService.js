@@ -1,12 +1,12 @@
 import axios from "axios";
 
 // Change this URL to match your JSON server or backend
-const API_URL = "http://localhost:3001/leaveRequests";
+const API_URL = "http://localhost:5000/leaveRequests";
 
 const LeaveService = {
 
   // Get all leaves
-  getAllLeaves: async () => {
+  getAllLeaveRequests: async () => {
     try {
       const response = await axios.get(API_URL);
       return response.data;

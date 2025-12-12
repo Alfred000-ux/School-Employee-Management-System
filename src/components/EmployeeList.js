@@ -45,7 +45,7 @@ function EmployeeList() {
             employees.map((emp) => (
               <tr key={emp.id}>
                 <td>{emp.id}</td>
-                <td>{emp.fullName}</td>
+                <td>{emp.firstName} {emp.lastName}</td>
                 <td>{emp.department}</td>
                 <td>{emp.position}</td>
                 <td>{emp.email}</td>
