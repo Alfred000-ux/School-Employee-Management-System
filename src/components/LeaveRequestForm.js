@@ -57,7 +57,7 @@ const LeaveRequestForm = () => {
         appliedAt: new Date().toISOString(),
       };
 
-      await LeaveService.createLeaveRequest(leaveData);
+      await LeaveService.createLeave(leaveData);
       navigate('/leave-requests');
     } catch (error) {
       console.error('Error submitting leave request:', error);

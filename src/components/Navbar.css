@@ -1,0 +1,148 @@
+/* Navbar.css - Navigation bar styles */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 64px;
+}
+
+.navbar-brand {
+  flex: 1;
+}
+
+.navbar-title {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-title:hover {
+  opacity: 0.8;
+}
+
+.navbar-menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 24px;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-link--active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-logout {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-logout:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile menu */
+.navbar-menu--open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 16px 0;
+  gap: 0;
+}
+
+.navbar-menu--open .navbar-item {
+  width: 100%;
+}
+
+.navbar-menu--open .navbar-link {
+  display: block;
+  padding: 12px 24px;
+  border-radius: 0;
+  text-align: center;
+}
+
+.navbar-menu--open .navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-menu-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-menu--open {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .navbar-title {
+    font-size: 1.1rem;
+  }
+}

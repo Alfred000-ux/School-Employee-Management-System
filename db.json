@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "Adebayo",
       "lastName": "Johnson",
       "email": "adebayo.johnson@school.edu.ng",
@@ -13,7 +13,7 @@
       "status": "active"
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "Chinwe",
       "lastName": "Okoro",
       "email": "chinwe.okoro@school.edu.ng",
@@ -25,7 +25,7 @@
       "status": "active"
     },
     {
-      "id": 3,
+      "id": "3",
       "firstName": "Emeka",
       "lastName": "Nwosu",
       "email": "emeka.nwosu@school.edu.ng",
@@ -37,7 +37,7 @@
       "status": "active"
     },
     {
-      "id": 4,
+      "id": "4",
       "firstName": "Funmi",
       "lastName": "Adeyemi",
       "email": "funmi.adeyemi@school.edu.ng",
@@ -49,7 +49,7 @@
       "status": "active"
     },
     {
-      "id": 5,
+      "id": "5",
       "firstName": "Gbenga",
       "lastName": "Okafor",
       "email": "gbenga.okafor@school.edu.ng",
@@ -59,11 +59,23 @@
       "salary": 35000,
       "hireDate": "2022-09-12",
       "status": "active"
+    },
+    {
+      "id": "8995",
+      "firstName": "Joshua",
+      "lastName": "Owolabi",
+      "email": "owolabijoshua12@gmail.com",
+      "phone": "+2347032905404",
+      "department": "Mathematics",
+      "position": "Principal",
+      "salary": 50000,
+      "hireDate": "2025-11-08",
+      "status": "active"
     }
   ],
   "leaveRequests": [
     {
-      "id": 1,
+      "id": "1",
       "employeeId": 1,
       "leaveType": "Annual Leave",
       "startDate": "2023-12-01",
@@ -73,7 +85,7 @@
       "appliedAt": "2023-11-20T10:00:00.000Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "employeeId": 2,
       "leaveType": "Sick Leave",
       "startDate": "2023-11-25",

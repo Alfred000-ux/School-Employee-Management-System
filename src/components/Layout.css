@@ -1,0 +1,31 @@
+/* Layout.css - Overall layout styles */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.layout-main {
+  flex-grow: 1;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .layout-main {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-main {
+    padding: 12px;
+  }
+}

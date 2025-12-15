@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -15,6 +15,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("token"));
 
+  // 🔁 Decode token whenever it changes
   useEffect(() => {
     if (token) {
       try {
@@ -27,17 +28,25 @@ export const AuthProvider = ({ children }) => {
     }
   }, [token]);
 
+  // ✅ MOCK LOGIN (ADMIN)
   const login = async (email, password) => {
     try {
-      // ✅ MOCK LOGIN (NO BACKEND)
+      // Admin mock user payload
+      const payload = {
+        id: 1,
+        email: email || "admin@test.com",
+        name: "Admin User",
+        role: "admin", // 🔥 THIS IS THE FIX
+      };
+
       const mockToken =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiBVc2VyIn0.mock_signature";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
+        btoa(JSON.stringify(payload)) +
+        ".mock_signature";
 
       localStorage.setItem("token", mockToken);
       setToken(mockToken);
-
-      const decoded = jwtDecode(mockToken);
-      setUser(decoded);
+      setUser(payload);
 
       return { success: true };
     } catch (error) {
@@ -45,17 +54,24 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  // ✅ MOCK REGISTER (ADMIN)
   const register = async (userData) => {
     try {
-      // ✅ MOCK REGISTER
+      const payload = {
+        id: 1,
+        email: userData.email,
+        name: userData.name,
+        role: "admin", // 🔥 ENSURE ADMIN
+      };
+
       const mockToken =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbiBVc2VyIn0.mock_signature";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9." +
+        btoa(JSON.stringify(payload)) +
+        ".mock_signature";
 
       localStorage.setItem("token", mockToken);
       setToken(mockToken);
-
-      const decoded = jwtDecode(mockToken);
-      setUser(decoded);
+      setUser(payload);
 
       return { success: true };
     } catch (error) {
@@ -69,26 +85,25 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  const isAuthenticated = () => {
-    return !!user;
-  };
+  // 🔐 AUTH HELPERS
+  const isAuthenticated = () => !!user;
 
   const isAdmin = () => {
     return user?.role === "admin";
   };
 
-  const value = {
-    user,
-    token,
-    login,
-    register,
-    logout,
-    isAuthenticated,
-    isAdmin,
-  };
-
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider
+      value={{
+        user,
+        token,
+        login,
+        register,
+        logout,
+        isAuthenticated,
+        isAdmin,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
