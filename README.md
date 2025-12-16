@@ -58,3 +58,16 @@ The School Employee Management System is a simple and effective solution for man
 
 ### Leave Form
 ![Leave Form](./LeaveForm.jpg)
+
+### Presentation Slides
+[Download Presentation Slides](./School-Employee-Management-System.pdf)
+
+### Colour Palette
+
+The following colours were used in the frontend design:
+
+- Primary Blue: #1976D2
+- Dark Blue: #0D47A1
+- White: #FFFFFF
+- Light Grey: #F5F5F5
+- Text Black: #212121
